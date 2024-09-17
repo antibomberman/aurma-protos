@@ -1,0 +1,21 @@
+syntax = "proto3";
+package user;
+
+option go_package = "proto/product";
+
+message SearchRequest {
+  int32 page = 1;
+  int32 limit = 2;
+  string title = 3;
+}
+message SearchResponse{
+  repeated Product products = 1;
+}
+message Product{
+  string id = 1;
+  string title = 2;
+  string slug = 3;
+  bool is_active = 4;
+  int64 price = 5;
+  int64 count = 6;
+}
