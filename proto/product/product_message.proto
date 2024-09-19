@@ -27,7 +27,7 @@ message Product{
 }
 
 message ProductImage{
-    string title = 1;
+    string name = 1;
     string description=2;
     repeated ProductImageLinks links = 3;
 }
