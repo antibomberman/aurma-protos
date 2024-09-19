@@ -4,6 +4,6 @@ package user;
 option go_package = "proto/product";
 
 service ProductService{
-  rpc Search(SearchRequest) returns (SearchResponse);
+  rpc Search(ProductSearchRequest) returns (ProductSearchResponse);
 }
 

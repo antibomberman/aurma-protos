@@ -26,7 +26,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProductServiceClient interface {
-	Search(ctx context.Context, in *SearchRequest, opts ...grpc.CallOption) (*SearchResponse, error)
+	Search(ctx context.Context, in *ProductSearchRequest, opts ...grpc.CallOption) (*ProductSearchResponse, error)
 }
 
 type productServiceClient struct {
@@ -37,9 +37,9 @@ func NewProductServiceClient(cc grpc.ClientConnInterface) ProductServiceClient {
 	return &productServiceClient{cc}
 }
 
-func (c *productServiceClient) Search(ctx context.Context, in *SearchRequest, opts ...grpc.CallOption) (*SearchResponse, error) {
+func (c *productServiceClient) Search(ctx context.Context, in *ProductSearchRequest, opts ...grpc.CallOption) (*ProductSearchResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(SearchResponse)
+	out := new(ProductSearchResponse)
 	err := c.cc.Invoke(ctx, ProductService_Search_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (c *productServiceClient) Search(ctx context.Context, in *SearchRequest, op
 // All implementations must embed UnimplementedProductServiceServer
 // for forward compatibility.
 type ProductServiceServer interface {
-	Search(context.Context, *SearchRequest) (*SearchResponse, error)
+	Search(context.Context, *ProductSearchRequest) (*ProductSearchResponse, error)
 	mustEmbedUnimplementedProductServiceServer()
 }
 
@@ -62,7 +62,7 @@ type ProductServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedProductServiceServer struct{}
 
-func (UnimplementedProductServiceServer) Search(context.Context, *SearchRequest) (*SearchResponse, error) {
+func (UnimplementedProductServiceServer) Search(context.Context, *ProductSearchRequest) (*ProductSearchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Search not implemented")
 }
 func (UnimplementedProductServiceServer) mustEmbedUnimplementedProductServiceServer() {}
@@ -87,7 +87,7 @@ func RegisterProductServiceServer(s grpc.ServiceRegistrar, srv ProductServiceSer
 }
 
 func _ProductService_Search_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SearchRequest)
+	in := new(ProductSearchRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -99,7 +99,7 @@ func _ProductService_Search_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: ProductService_Search_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductServiceServer).Search(ctx, req.(*SearchRequest))
+		return srv.(ProductServiceServer).Search(ctx, req.(*ProductSearchRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

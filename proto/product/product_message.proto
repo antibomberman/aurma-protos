@@ -3,19 +3,37 @@ package user;
 
 option go_package = "proto/product";
 
-message SearchRequest {
+message ProductSearchRequest {
   int32 page = 1;
   int32 limit = 2;
   string title = 3;
 }
-message SearchResponse{
-  repeated Product products = 1;
+message ProductSearchResponse{
+  int32 total_count = 1;
+  repeated Product products = 2;
 }
 message Product{
-  string id = 1;
+  int32 id = 1;
   string title = 2;
   string slug = 3;
   bool is_active = 4;
   int64 price = 5;
   int64 count = 6;
+  string company_name = 7;
+  string barcode = 8;
+  string mnn = 9;
+  string issue_form = 10;
+  repeated ProductImage images = 11;
+}
+
+message ProductImage{
+    string title = 1;
+    string description=2;
+    ProductImageLinks links = 3;
+}
+message ProductImageLinks{
+  string medium = 1;
+  string thumbnail= 2;
+  string     raw= 3;
+  string og_image= 4;
 }

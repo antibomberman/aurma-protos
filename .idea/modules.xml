@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/protos.iml" filepath="$PROJECT_DIR$/.idea/protos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/aurma-protos.iml" filepath="$PROJECT_DIR$/.idea/aurma-protos.iml" />
     </modules>
   </component>
 </project>
