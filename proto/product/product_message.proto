@@ -12,6 +12,7 @@ message ProductSearchResponse{
   int32 total_count = 1;
   repeated Product products = 2;
 }
+
 message Product{
   int32 id = 1;
   string title = 2;
