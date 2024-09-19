@@ -29,11 +29,11 @@ message Product{
 message ProductImage{
     string title = 1;
     string description=2;
-    ProductImageLinks links = 3;
+    repeated ProductImageLinks links = 3;
 }
 message ProductImageLinks{
   string medium = 1;
   string thumbnail= 2;
-  string     raw= 3;
+  string raw= 3;
   string og_image= 4;
 }
