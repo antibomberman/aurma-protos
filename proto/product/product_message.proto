@@ -25,7 +25,6 @@ message Product{
   string issue_form = 10;
   repeated ProductImage images = 11;
 }
-
 message ProductImage{
     string name = 1;
     string description=2;
