@@ -2,7 +2,6 @@ syntax = "proto3";
 import "product_message.proto";
 package user;
 option go_package = "proto/product";
-
 service ProductService{
   rpc Search(ProductSearchRequest) returns (ProductSearchResponse);
 }
