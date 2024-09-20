@@ -1,5 +1,6 @@
 syntax = "proto3";
-package user;
+import "product_enum.proto";
+package product;
 
 option go_package = "proto/product";
 
@@ -7,6 +8,10 @@ message ProductSearchRequest {
   int32 page = 1;
   int32 limit = 2;
   string title = 3;
+  ProductSearchSort sort = 4;
+  int32  min_price = 5;
+  int32 max_price = 6;
+
 }
 message ProductSearchResponse{
   int32 total_count = 1;

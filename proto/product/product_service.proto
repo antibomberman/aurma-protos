@@ -1,6 +1,6 @@
 syntax = "proto3";
 import "product_message.proto";
-package user;
+package product;
 option go_package = "proto/product";
 
 service ProductService{

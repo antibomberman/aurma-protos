@@ -1,0 +1,13 @@
+syntax = "proto3";
+package product;
+
+option go_package = "proto/product";
+
+enum ProductSearchSort{
+  DEFAULT = 0;
+  PRICE_DESC = 1;//сначала дорогие
+  PRICE_ASC = 2;//сначала дешевые
+
+  COUNT_DESC = 3;
+  COUNT_ASC = 4;
+}
