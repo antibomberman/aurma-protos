@@ -3,9 +3,9 @@ package user;
 
 option go_package = "proto/user";
 
-message CheckRequest{
+message CountRequest{
 
 }
-message CheckResponse{
-  bool check = 1;
+message CountResponse{
+  int32 count = 1;
 }

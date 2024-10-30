@@ -20,14 +20,14 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type CheckRequest struct {
+type CountRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *CheckRequest) Reset() {
-	*x = CheckRequest{}
+func (x *CountRequest) Reset() {
+	*x = CountRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_user_message_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -35,13 +35,13 @@ func (x *CheckRequest) Reset() {
 	}
 }
 
-func (x *CheckRequest) String() string {
+func (x *CountRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CheckRequest) ProtoMessage() {}
+func (*CountRequest) ProtoMessage() {}
 
-func (x *CheckRequest) ProtoReflect() protoreflect.Message {
+func (x *CountRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_user_message_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -53,21 +53,21 @@ func (x *CheckRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CheckRequest.ProtoReflect.Descriptor instead.
-func (*CheckRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CountRequest.ProtoReflect.Descriptor instead.
+func (*CountRequest) Descriptor() ([]byte, []int) {
 	return file_user_message_proto_rawDescGZIP(), []int{0}
 }
 
-type CheckResponse struct {
+type CountResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Check bool `protobuf:"varint,1,opt,name=check,proto3" json:"check,omitempty"`
+	Count int32 `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
 }
 
-func (x *CheckResponse) Reset() {
-	*x = CheckResponse{}
+func (x *CountResponse) Reset() {
+	*x = CountResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_user_message_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -75,13 +75,13 @@ func (x *CheckResponse) Reset() {
 	}
 }
 
-func (x *CheckResponse) String() string {
+func (x *CountResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CheckResponse) ProtoMessage() {}
+func (*CountResponse) ProtoMessage() {}
 
-func (x *CheckResponse) ProtoReflect() protoreflect.Message {
+func (x *CountResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_user_message_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -93,27 +93,27 @@ func (x *CheckResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CheckResponse.ProtoReflect.Descriptor instead.
-func (*CheckResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CountResponse.ProtoReflect.Descriptor instead.
+func (*CountResponse) Descriptor() ([]byte, []int) {
 	return file_user_message_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CheckResponse) GetCheck() bool {
+func (x *CountResponse) GetCount() int32 {
 	if x != nil {
-		return x.Check
+		return x.Count
 	}
-	return false
+	return 0
 }
 
 var File_user_message_proto protoreflect.FileDescriptor
 
 var file_user_message_proto_rawDesc = []byte{
 	0x0a, 0x12, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0x0e, 0x0a, 0x0c, 0x43, 0x68,
-	0x65, 0x63, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x25, 0x0a, 0x0d, 0x43, 0x68,
-	0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63,
-	0x68, 0x65, 0x63, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x63, 0x68, 0x65, 0x63,
-	0x6b, 0x42, 0x0c, 0x5a, 0x0a, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x62,
+	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0x0e, 0x0a, 0x0c, 0x43, 0x6f,
+	0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x25, 0x0a, 0x0d, 0x43, 0x6f,
+	0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e,
+	0x74, 0x42, 0x0c, 0x5a, 0x0a, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
@@ -131,8 +131,8 @@ func file_user_message_proto_rawDescGZIP() []byte {
 
 var file_user_message_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_user_message_proto_goTypes = []any{
-	(*CheckRequest)(nil),  // 0: user.CheckRequest
-	(*CheckResponse)(nil), // 1: user.CheckResponse
+	(*CountRequest)(nil),  // 0: user.CountRequest
+	(*CountResponse)(nil), // 1: user.CountResponse
 }
 var file_user_message_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -149,7 +149,7 @@ func file_user_message_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_user_message_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*CheckRequest); i {
+			switch v := v.(*CountRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -161,7 +161,7 @@ func file_user_message_proto_init() {
 			}
 		}
 		file_user_message_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*CheckResponse); i {
+			switch v := v.(*CountResponse); i {
 			case 0:
 				return &v.state
 			case 1:
