@@ -4,7 +4,6 @@ package user;
 option go_package = "proto/user";
 
 message CheckRequest{
-
 }
 message CheckResponse{
   bool check = 1;
