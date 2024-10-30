@@ -1,0 +1,8 @@
+syntax = "proto3";
+import "user_message.proto";
+package user;
+option go_package = "proto/user";
+service UserService{
+  rpc Check(CheckRequest) returns (CheckResponse);
+}
+
