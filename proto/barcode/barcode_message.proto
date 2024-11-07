@@ -1,0 +1,44 @@
+syntax = "proto3";
+package barcode;
+
+option go_package = "proto/barcode";
+import "google/protobuf/timestamp.proto";
+
+
+message Barcode{
+  int64 id = 1;
+  string code = 2;
+  string type = 3;
+  string image_path = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
+message GenerateBarcodeRequest{
+  string code = 1;
+}
+message GenerateBarcodeResponse{
+  Barcode barcode = 1;
+}
+
+message GetBarcodeRequest{
+  string code = 1;
+}
+message GetBarcodeResponse{
+  Barcode barcode = 1;
+}
+
+message SearchBarcodesRequest{
+  string query = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+message SearchBarcodesResponse{
+  repeated Barcode barcodes = 1;
+  int32 total_count = 2;
+}
+message DeleteBarcodeRequest{
+  string code = 1;
+}
+message DeleteBarcodeResponse{
+  bool success = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+import "barcode_message.proto";
+package barcode;
+option go_package = "proto/barcode";
+service BarcodeService{
+  rpc GenerateBarcode(GenerateBarcodeRequest) returns (GenerateBarcodeResponse);
+  rpc GetBarcode(GetBarcodeRequest) returns (GetBarcodeResponse);
+  rpc SearchBarcodes(SearchBarcodesRequest) returns (SearchBarcodesResponse);
+  rpc DeleteBarcode(DeleteBarcodeRequest) returns (DeleteBarcodeResponse);
+}
+
